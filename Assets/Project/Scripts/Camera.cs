@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
+
+    public float lookSensitivity = 200f;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false ;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -16,7 +19,7 @@ public class Camera : MonoBehaviour
     {
         if (Cursor.visible = true)
             Cursor.visible = false ;
-            Cursor.lockState = CursorLockMode.Confined;
-        transform.Rotate(Input.GetAxis("Mouse Y")*-1*2,0f,0f);
+            Cursor.lockState = CursorLockMode.Locked;
+        transform.Rotate(Input.GetAxis("Mouse Y")*-1*2,0f,0f * lookSensitivity * Time.deltaTime);
     }
 }
