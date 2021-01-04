@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
     }
-    void Move(string s)
+    void Move()
     {
         if (Input.GetKey("w"))
         {
