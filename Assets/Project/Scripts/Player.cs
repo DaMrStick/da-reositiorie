@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float lookSensitivity = 1000000f;
     public float Speed = 10.0f;
     public Rigidbody rb;
     public float thrust = 3;
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
             IsJumping = true;
         }
         //rotatetion here
-        transform.Rotate(0f,Input.GetAxis("Mouse X")*2,0f);
+        transform.Rotate(0f,Input.GetAxis("Mouse X")*2,0f * lookSensitivity * Time.deltaTime);
     }
     void FixedUpdate()
     {
